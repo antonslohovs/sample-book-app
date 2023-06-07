@@ -61,8 +61,10 @@ pipeline {
 
 def build(){
     echo "Building of node application is starting.."
+    git branch: 'main', poll: false, url: 'https://github.com/antonslohovs/course-js-api-framework_2.git'
+    bat "ls"
     bat "npm install"
-    bat "npm install -g pm2"
+  //  bat "npm install -g pm2"
 }
 
 def deploy(String environment, int port){
@@ -73,5 +75,6 @@ def deploy(String environment, int port){
 
 def test(String test_set, String environment){
     echo "Testing ${test_set} test set on ${environment} has started.."
+    git branch: 'main', poll: false, url: 'https://github.com/antonslohovs/course-js-api-framework_2.git'
     bat "npm run ${test_set} ${test_set}_${environment}"
 }
