@@ -67,7 +67,7 @@ def deploy(String environment, int port){
     git branch: 'main', url: 'https://github.com/mtararujs/sample-book-app.git'
     bat "npm install"
     bat "pm2 delete \"books-${environment}\""
-    bat "pm2 start -n \"books-${environment}\" index.js -- ${port}"
+    bat "pm2 start -n \"books-${environment}\" index.js -- -- ${port}"
 }
 
 def test(String test_set, String environment){
