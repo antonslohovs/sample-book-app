@@ -56,14 +56,9 @@ pipeline {
     }
 }
 
-// for windows: bat "npm.."
-// for linux/macos: sh "npm .."
-
 def build(){
     echo "Building of node application is starting.."
-    bat "ls"
     bat "npm install"
-    // sh "npm test"
 }
 
 def deploy(String environment, int port){
