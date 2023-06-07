@@ -66,7 +66,7 @@ def deploy(String environment, int port){
     echo "Deployment to ${environment} has started.."
     git branch: 'main', url: 'https://github.com/antonslohovs/sample-book-app.git'
     bat "npm install"
-    bat "npm installnpm install -g pm2"
+    bat "npm install -g pm2"
     bat "pm2 start -n \"books-${environment}\" index.js -- -- ${port}"
 }
 
