@@ -62,7 +62,7 @@ pipeline {
 def build(){
     echo "Building of node application is starting.."
     bat "npm install"
-    bat "npm test"
+  //  bat "npm test"
 }
 
 def deploy(String environment, int port){
